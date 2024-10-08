@@ -1,0 +1,36 @@
+<% layout('layouts/boilerplate') %>
+
+<%- include('../partials/navbar') %>    
+<%- include('../partials/flash') %>    
+
+<div class="row">
+  <!-- <% if(msg && msg.length){ %>
+  <div class="alert alert-success" role="alert">
+    <strong><%=msg%></strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <% } %> -->
+            
+            <div class="transfrom:translateY(50%)">
+              <!-- displaying flash -->
+
+                <div class="card shadow mx-auto" style="width: 50%;">
+                    
+                    <div class="card-body">
+                      <h2 class="card-title">Title : <%=foundProduct.title%></h2>
+                      <h5 class="card-title">Genre : <%=foundProduct.genre%></h5>
+                      <h5 class="card-title">Publication Year<%=foundProduct.publicationYear%></h5>
+                      <h5 class="card-title">Book Title : <%=foundProduct.bookTitle%></h5>
+                      <p class="card-text">Author : <%=foundProduct.author%></p>
+                      <p class="card-title">Price : <%=foundProduct.price%></p>
+                      <a href="/book/<%=foundProduct._id%>/edit" class="btn btn-sm btn btn-sm btn-secondary">Edit</a>
+                    </div>
+                </div>
+            </div>
+
+            
+
+</div>
+
+</body>
+</html>

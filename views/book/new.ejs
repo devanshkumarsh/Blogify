@@ -1,0 +1,111 @@
+<% layout('layouts/boilerplate') %>
+
+<%- include('../partials/navbar') %>    
+
+<div class="row">
+    <div class="col-6 mx-auto">
+
+        <form action="/book" method="POST" class="needs-validation" novalidate >
+
+
+            <div class="mb-3">
+                <label for="title">Title: </label>
+                <input type="text" class="form-control" name="title" id="title" placeholder="Name of the book" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter the title field.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="author">Author: </label>
+                <input type="text" class="form-control" name="author" id="author" placeholder="Name of the author" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter the Author field.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="genre">Genre: </label>
+                <input type="text" class="form-control" name="genre" id="genre" placeholder="specify the genre" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter the genre field.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="publicationYear">Publication Year: </label>
+                <input type="text" class="form-control" name="publicationYear" id="publicationYear" placeholder="specify the publicationYear" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter the Publication Year field.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="bookTitle">Book Title : </label>
+                <input type="text" class="form-control" name="bookTitle" id="bookTitle" placeholder="specify the bookTitle" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter the Book Title Year field.
+                </div>
+            </div>
+
+
+            <div class="mb-3">
+                <label for="paisa">Price: </label>
+                <input type="number" class="form-control" name="price" id="paisa" placeholder="price of the book" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please enter the price field.
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+        
+</div>
+
+
+<script>
+    // iife(immidiately invoked functional expression)
+    (() => {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+        }, false)
+    })
+    })()
+</script>
+
+</body>
+</html>
+
+
+
